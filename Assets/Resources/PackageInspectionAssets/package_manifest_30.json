@@ -1,0 +1,692 @@
+[
+  {
+    "id": "R001",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R001_report.png",
+    "boxLabel": "box_labels_png/01_easy/R001_box_label.png",
+    "report": {
+      "shape": "Square",
+      "barcode": "FATE",
+      "logo": "Red",
+      "tapeColor": "Red",
+      "destination": "B-12",
+      "weight": "07.4KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "FATE",
+      "logo": "Red",
+      "tapeColor": "Red",
+      "destination": "B-12",
+      "weight": "07.4KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R002",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R002_report.png",
+    "boxLabel": "box_labels_png/01_easy/R002_box_label.png",
+    "report": {
+      "shape": "Triangular",
+      "barcode": "GIVE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-03",
+      "weight": "04.2KG"
+    },
+    "box": {
+      "shape": "Triangular",
+      "barcode": "GIVE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-03",
+      "weight": "04.2KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R003",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R003_report.png",
+    "boxLabel": "box_labels_png/01_easy/R003_box_label.png",
+    "report": {
+      "shape": "Circle",
+      "barcode": "HUSH",
+      "logo": "Gear",
+      "tapeColor": "Blue",
+      "destination": "C-07",
+      "weight": "02.0KG"
+    },
+    "box": {
+      "shape": "Circle",
+      "barcode": "HUSH",
+      "logo": "Gear",
+      "tapeColor": "Blue",
+      "destination": "C-07",
+      "weight": "02.0KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R004",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R004_report.png",
+    "boxLabel": "box_labels_png/01_easy/R004_box_label.png",
+    "report": {
+      "shape": "Square",
+      "barcode": "SAFE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-01",
+      "weight": "09.0KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "SAFE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-01",
+      "weight": "09.0KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R005",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R005_report.png",
+    "boxLabel": "box_labels_png/01_easy/R005_box_label.png",
+    "report": {
+      "shape": "Circle",
+      "barcode": "ECHO",
+      "logo": "Gear",
+      "tapeColor": "White",
+      "destination": "C-04",
+      "weight": "02.4KG"
+    },
+    "box": {
+      "shape": "Circle",
+      "barcode": "ECHO",
+      "logo": "Gear",
+      "tapeColor": "White",
+      "destination": "C-04",
+      "weight": "02.4KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R006",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R006_report.png",
+    "boxLabel": "box_labels_png/01_easy/R006_box_label.png",
+    "report": {
+      "shape": "Square",
+      "barcode": "FATE",
+      "logo": "Red",
+      "tapeColor": "Red",
+      "destination": "B-12",
+      "weight": "07.4KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "THEM",
+      "logo": "Red",
+      "tapeColor": "Red",
+      "destination": "B-12",
+      "weight": "07.4KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R007",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R007_report.png",
+    "boxLabel": "box_labels_png/01_easy/R007_box_label.png",
+    "report": {
+      "shape": "Triangular",
+      "barcode": "GIVE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-03",
+      "weight": "04.2KG"
+    },
+    "box": {
+      "shape": "Triangular",
+      "barcode": "GIVE",
+      "logo": "Blue",
+      "tapeColor": "White",
+      "destination": "A-03",
+      "weight": "04.2KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R008",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R008_report.png",
+    "boxLabel": "box_labels_png/01_easy/R008_box_label.png",
+    "report": {
+      "shape": "Circle",
+      "barcode": "HUSH",
+      "logo": "Gear",
+      "tapeColor": "Blue",
+      "destination": "C-07",
+      "weight": "02.0KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "HUSH",
+      "logo": "Gear",
+      "tapeColor": "Blue",
+      "destination": "C-07",
+      "weight": "02.0KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R009",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R009_report.png",
+    "boxLabel": "box_labels_png/01_easy/R009_box_label.png",
+    "report": {
+      "shape": "Square",
+      "barcode": "SAFE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-01",
+      "weight": "09.0KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "SAFE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-09",
+      "weight": "09.0KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R010",
+    "difficulty": "easy",
+    "reportImage": "reports_png/01_easy/R010_report.png",
+    "boxLabel": "box_labels_png/01_easy/R010_box_label.png",
+    "report": {
+      "shape": "Circle",
+      "barcode": "ECHO",
+      "logo": "Gear",
+      "tapeColor": "White",
+      "destination": "C-04",
+      "weight": "02.4KG"
+    },
+    "box": {
+      "shape": "Circle",
+      "barcode": "ECHO",
+      "logo": "Gear",
+      "tapeColor": "White",
+      "destination": "C-04",
+      "weight": "08.4KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R011",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R011_report.png",
+    "boxLabel": "box_labels_png/02_medium/R011_box_label.png",
+    "report": {
+      "shape": "Diamond",
+      "barcode": "NULL",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "E-13",
+      "weight": "06.6KG"
+    },
+    "box": {
+      "shape": "Diamond",
+      "barcode": "NULL",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "E-13",
+      "weight": "06.6KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R012",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R012_report.png",
+    "boxLabel": "box_labels_png/02_medium/R012_box_label.png",
+    "report": {
+      "shape": "Square",
+      "barcode": "LOCK",
+      "logo": "Red",
+      "tapeColor": "Yellow",
+      "destination": "D-02",
+      "weight": "12.1KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "LOCK",
+      "logo": "Red",
+      "tapeColor": "Yellow",
+      "destination": "D-02",
+      "weight": "12.1KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R013",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R013_report.png",
+    "boxLabel": "box_labels_png/02_medium/R013_box_label.png",
+    "report": {
+      "shape": "Triangular",
+      "barcode": "MOTH",
+      "logo": "Blue",
+      "tapeColor": "Purple",
+      "destination": "B-08",
+      "weight": "00.0KG"
+    },
+    "box": {
+      "shape": "Triangular",
+      "barcode": "MOTH",
+      "logo": "Blue",
+      "tapeColor": "Purple",
+      "destination": "B-08",
+      "weight": "00.0KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R014",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R014_report.png",
+    "boxLabel": "box_labels_png/02_medium/R014_box_label.png",
+    "report": {
+      "shape": "Circle",
+      "barcode": "OPEN",
+      "logo": "Gear",
+      "tapeColor": "Green",
+      "destination": "A-11",
+      "weight": "03.3KG"
+    },
+    "box": {
+      "shape": "Circle",
+      "barcode": "OPEN",
+      "logo": "Gear",
+      "tapeColor": "Green",
+      "destination": "A-11",
+      "weight": "03.3KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R015",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R015_report.png",
+    "boxLabel": "box_labels_png/02_medium/R015_box_label.png",
+    "report": {
+      "shape": "Diamond",
+      "barcode": "VOID",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "D-00",
+      "weight": "11.8KG"
+    },
+    "box": {
+      "shape": "Diamond",
+      "barcode": "VOID",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "D-00",
+      "weight": "11.8KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R016",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R016_report.png",
+    "boxLabel": "box_labels_png/02_medium/R016_box_label.png",
+    "report": {
+      "shape": "Diamond",
+      "barcode": "NULL",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "E-13",
+      "weight": "06.6KG"
+    },
+    "box": {
+      "shape": "Diamond",
+      "barcode": "NUL1",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "E-13",
+      "weight": "06.6KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R017",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R017_report.png",
+    "boxLabel": "box_labels_png/02_medium/R017_box_label.png",
+    "report": {
+      "shape": "Square",
+      "barcode": "LOCK",
+      "logo": "Red",
+      "tapeColor": "Yellow",
+      "destination": "D-02",
+      "weight": "12.1KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "LOCK",
+      "logo": "Blue",
+      "tapeColor": "Yellow",
+      "destination": "D-02",
+      "weight": "12.1KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R018",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R018_report.png",
+    "boxLabel": "box_labels_png/02_medium/R018_box_label.png",
+    "report": {
+      "shape": "Triangular",
+      "barcode": "MOTH",
+      "logo": "Blue",
+      "tapeColor": "Purple",
+      "destination": "B-08",
+      "weight": "00.0KG"
+    },
+    "box": {
+      "shape": "Triangular",
+      "barcode": "MOTH",
+      "logo": "Blue",
+      "tapeColor": "Purple",
+      "destination": "B-80",
+      "weight": "00.0KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R019",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R019_report.png",
+    "boxLabel": "box_labels_png/02_medium/R019_box_label.png",
+    "report": {
+      "shape": "Circle",
+      "barcode": "OPEN",
+      "logo": "Gear",
+      "tapeColor": "Green",
+      "destination": "A-11",
+      "weight": "03.3KG"
+    },
+    "box": {
+      "shape": "Circle",
+      "barcode": "OPEN",
+      "logo": "Gear",
+      "tapeColor": "Green",
+      "destination": "A-11",
+      "weight": "13.3KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R020",
+    "difficulty": "medium",
+    "reportImage": "reports_png/02_medium/R020_report.png",
+    "boxLabel": "box_labels_png/02_medium/R020_box_label.png",
+    "report": {
+      "shape": "Diamond",
+      "barcode": "VOID",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "D-00",
+      "weight": "11.8KG"
+    },
+    "box": {
+      "shape": "Circle",
+      "barcode": "VOID",
+      "logo": "Bulb",
+      "tapeColor": "Red",
+      "destination": "D-00",
+      "weight": "11.8KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R021",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R021_report.png",
+    "boxLabel": "box_labels_png/03_hard/R021_box_label.png",
+    "report": {
+      "shape": "Square",
+      "barcode": "FATE",
+      "logo": "Red",
+      "tapeColor": "Red",
+      "destination": "B-12",
+      "weight": "07.4KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "FATE",
+      "logo": "Red",
+      "tapeColor": "Blue",
+      "destination": "B-12",
+      "weight": "07.4KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R022",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R022_report.png",
+    "boxLabel": "box_labels_png/03_hard/R022_box_label.png",
+    "report": {
+      "shape": "Triangular",
+      "barcode": "GIVE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-03",
+      "weight": "04.2KG"
+    },
+    "box": {
+      "shape": "Triangular",
+      "barcode": "GIVE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-03",
+      "weight": "04.2KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R023",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R023_report.png",
+    "boxLabel": "box_labels_png/03_hard/R023_box_label.png",
+    "report": {
+      "shape": "Circle",
+      "barcode": "HUSH",
+      "logo": "Gear",
+      "tapeColor": "Blue",
+      "destination": "C-07",
+      "weight": "02.0KG"
+    },
+    "box": {
+      "shape": "Circle",
+      "barcode": "HUSH",
+      "logo": "Gear",
+      "tapeColor": "Blue",
+      "destination": "C-07",
+      "weight": "02.0KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R024",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R024_report.png",
+    "boxLabel": "box_labels_png/03_hard/R024_box_label.png",
+    "report": {
+      "shape": "Diamond",
+      "barcode": "NULL",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "E-13",
+      "weight": "06.6KG"
+    },
+    "box": {
+      "shape": "Diamond",
+      "barcode": "NULL",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "E-13",
+      "weight": "09.6KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R025",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R025_report.png",
+    "boxLabel": "box_labels_png/03_hard/R025_box_label.png",
+    "report": {
+      "shape": "Square",
+      "barcode": "LOCK",
+      "logo": "Red",
+      "tapeColor": "Yellow",
+      "destination": "D-02",
+      "weight": "12.1KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "LOCK",
+      "logo": "Red",
+      "tapeColor": "Yellow",
+      "destination": "D-02",
+      "weight": "12.1KG"
+    },
+    "shouldReject": false
+  },
+  {
+    "id": "R026",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R026_report.png",
+    "boxLabel": "box_labels_png/03_hard/R026_box_label.png",
+    "report": {
+      "shape": "Triangular",
+      "barcode": "MOTH",
+      "logo": "Blue",
+      "tapeColor": "Purple",
+      "destination": "B-08",
+      "weight": "00.0KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "MOTH",
+      "logo": "Blue",
+      "tapeColor": "Purple",
+      "destination": "B-08",
+      "weight": "00.0KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R027",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R027_report.png",
+    "boxLabel": "box_labels_png/03_hard/R027_box_label.png",
+    "report": {
+      "shape": "Circle",
+      "barcode": "OPEN",
+      "logo": "Gear",
+      "tapeColor": "Green",
+      "destination": "A-11",
+      "weight": "03.3KG"
+    },
+    "box": {
+      "shape": "Circle",
+      "barcode": "0PEN",
+      "logo": "Gear",
+      "tapeColor": "Green",
+      "destination": "A-11",
+      "weight": "03.3KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R028",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R028_report.png",
+    "boxLabel": "box_labels_png/03_hard/R028_box_label.png",
+    "report": {
+      "shape": "Diamond",
+      "barcode": "VOID",
+      "logo": "Bulb",
+      "tapeColor": "Black",
+      "destination": "D-00",
+      "weight": "11.8KG"
+    },
+    "box": {
+      "shape": "Diamond",
+      "barcode": "VOID",
+      "logo": "Gear",
+      "tapeColor": "Black",
+      "destination": "D-00",
+      "weight": "11.8KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R029",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R029_report.png",
+    "boxLabel": "box_labels_png/03_hard/R029_box_label.png",
+    "report": {
+      "shape": "Square",
+      "barcode": "SAFE",
+      "logo": "Blue",
+      "tapeColor": "Green",
+      "destination": "A-01",
+      "weight": "09.0KG"
+    },
+    "box": {
+      "shape": "Square",
+      "barcode": "SAFE",
+      "logo": "Blue",
+      "tapeColor": "White",
+      "destination": "A-01",
+      "weight": "09.0KG"
+    },
+    "shouldReject": true
+  },
+  {
+    "id": "R030",
+    "difficulty": "hard",
+    "reportImage": "reports_png/03_hard/R030_report.png",
+    "boxLabel": "box_labels_png/03_hard/R030_box_label.png",
+    "report": {
+      "shape": "Circle",
+      "barcode": "ECHO",
+      "logo": "Gear",
+      "tapeColor": "White",
+      "destination": "C-04",
+      "weight": "02.4KG"
+    },
+    "box": {
+      "shape": "Circle",
+      "barcode": "ECHO",
+      "logo": "Gear",
+      "tapeColor": "White",
+      "destination": "C-04",
+      "weight": "02.4KG"
+    },
+    "shouldReject": false
+  }
+]
