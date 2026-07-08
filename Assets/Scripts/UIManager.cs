@@ -1371,24 +1371,24 @@ public class UIManager : MonoBehaviour
             briefingContinueButton.interactable = false;
         }
 
-        float startAlpha = briefingCanvasGroup != null ? briefingCanvasGroup.alpha : 1f;
         float startVolume = briefingTapeAudioSource != null ? briefingTapeAudioSource.volume : 0f;
-        const float fadeDuration = 0.55f;
-        const float blackHoldDuration = 0.25f;
-        const float revealDuration = 0.78f;
+        const float audioFadeDuration = 0.55f;
+        const float blackHoldDuration = 0.75f;
+        const float gameplayWarmupHoldDuration = 0.90f;
+        const float revealDuration = 1.05f;
         float elapsed = 0f;
-        PrepareTransitionBlockerForFade(0f);
-        BackgroundMusicManager.Instance?.FadeCurrentMusicToSilence(fadeDuration + blackHoldDuration);
+        PrepareTransitionBlockerForFade(1f);
+        BackgroundMusicManager.Instance?.FadeCurrentMusicToSilence(audioFadeDuration + blackHoldDuration);
 
-        while (elapsed < fadeDuration)
+        while (elapsed < audioFadeDuration)
         {
             elapsed += Time.unscaledDeltaTime;
-            float t = Mathf.Clamp01(elapsed / fadeDuration);
+            float t = Mathf.Clamp01(elapsed / audioFadeDuration);
             float eased = 1f - Mathf.Pow(1f - t, 3f);
 
             if (briefingCanvasGroup != null)
             {
-                briefingCanvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, eased);
+                briefingCanvasGroup.alpha = 1f;
                 briefingCanvasGroup.interactable = false;
                 briefingCanvasGroup.blocksRaycasts = true;
             }
@@ -1396,11 +1396,6 @@ public class UIManager : MonoBehaviour
             if (briefingTapeAudioSource != null)
             {
                 briefingTapeAudioSource.volume = Mathf.Lerp(startVolume, 0f, eased);
-            }
-
-            if (transitionBlockerCanvasGroup != null)
-            {
-                transitionBlockerCanvasGroup.alpha = eased;
             }
 
             AudioManager.Instance?.SetBriefingCassetteFade(1f - eased);
@@ -1422,14 +1417,14 @@ public class UIManager : MonoBehaviour
         }
 
         briefingPanel?.SetActive(false);
-        IsBlockingScreenOpen = false;
-        isBriefingClosing = false;
 
         yield return new WaitForSecondsRealtime(blackHoldDuration);
 
         briefingContinueAction?.Invoke();
-        yield return null;
+        yield return new WaitForSecondsRealtime(gameplayWarmupHoldDuration);
         yield return FadeOutTransitionBlocker(revealDuration);
+        IsBlockingScreenOpen = false;
+        isBriefingClosing = false;
         briefingOutroRoutine = null;
     }
 

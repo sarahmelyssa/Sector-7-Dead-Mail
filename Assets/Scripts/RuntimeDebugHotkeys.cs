@@ -30,7 +30,7 @@ public class RuntimeDebugHotkeys : MonoBehaviour
         if (WasCedillaPressed(keyboard))
         {
             GameManager gameManager = Object.FindFirstObjectByType<GameManager>();
-            gameManager?.DebugForceWinSequence();
+            gameManager?.DebugJumpToOnePackageBeforeVictory();
         }
     }
 

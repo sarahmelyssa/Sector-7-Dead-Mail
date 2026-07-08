@@ -128,6 +128,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void DebugJumpToOnePackageBeforeVictory()
+    {
+        if (!IsPlaying)
+        {
+            return;
+        }
+
+        quotaAtual = Mathf.Max(0, quotaNecessaria - 1);
+    }
+
     public void ResolveShiftEnd()
     {
         if (!IsPlaying)

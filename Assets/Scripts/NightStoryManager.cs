@@ -68,7 +68,7 @@ public class NightStoryManager : MonoBehaviour
             {
                 "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nOlá, funcionário.\nBem-vindo ao Setor Postal 7.\n\nEste é o seu turno completo na sala de armazenamento.\nDas 00:00 às 06:00, a estação pertence a você.\n\nNão peça transferência durante o expediente.",
                 "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nAvalie cada encomenda e compare com o relatório.\n\nConfira FORMATO, CÓDIGO DE BARRAS, LOGOTIPO, FITA, DESTINO e PESO.\n\nAbra o relatório com E ou clique.\nUse A/D para girar a caixa.",
-                "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nSe tudo estiver correto, pressione ENTER para APROVAR.\nSe houver qualquer diferença, pressione Q para REJEITAR.\n\nCada caixa tem 20 segundos.\nO painel da parede mostra hora, pedidos e tempo restante.",
+                "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nSe tudo estiver correto, pressione ENTER para APROVAR.\nSe houver qualquer diferença, pressione Q para REJEITAR.\n\nCada caixa pode chegar a 1 minuto.\nConforme o turno avança, o tempo diminui até 20 segundos.\nO painel da parede mostra hora, pedidos, erros e tempo restante.",
                 "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nMantenha atenção nos sons ao redor.\nSe ouvir uma batida atrás de você, pressione S e olhe para o corredor.\n\nQuando estiver virado para trás, pressione F e procure com a lanterna.\n\nSe encontrar os olhos, mantenha a luz neles até a anomalia fugir."
             },
             completionPages = new List<string>
@@ -79,7 +79,7 @@ public class NightStoryManager : MonoBehaviour
             {
                 "TURNO FALHOU\n\nSeu arquivo não foi fechado.\nO Setor Postal 7 guardará o restante do procedimento."
             },
-            briefingText = "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n\nBem-vindo ao Setor Postal 7. Avalie encomendas, compare com o relatório, use E ou clique para abrir o relatório, A/D para girar, ENTER para aprovar e Q para rejeitar. Cada caixa tem 20 segundos. Se ouvir uma batida atrás de você, pressione S. Quando estiver olhando para o corredor, pressione F e procure com a lanterna até a anomalia fugir.",
+            briefingText = "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n\nBem-vindo ao Setor Postal 7. Avalie encomendas, compare com o relatório, use E ou clique para abrir o relatório, A/D para girar, ENTER para aprovar e Q para rejeitar. Cada caixa pode chegar a 1 minuto, diminuindo até 20 segundos conforme o turno avança. Se ouvir uma batida atrás de você, pressione S. Quando estiver olhando para o corredor, pressione F e procure com a lanterna até a anomalia fugir.",
             completionText = "FIM DO TURNO\n\n00:00 - 06:00\nPedidos processados. Registro fechado. Você sobreviveu ao turno.",
             failureText = "TURNO FALHOU\n\nSeu arquivo não foi fechado. O Setor Postal 7 guardará o restante do procedimento.",
             nightQuota = 10,
@@ -119,7 +119,7 @@ public class NightStoryManager : MonoBehaviour
             {
                 "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nOlá, funcionário.\nBem-vindo ao Setor Postal 7.\n\nEste é o seu turno completo na sala de armazenamento.\nDas 00:00 às 06:00, a estação pertence a você.\n\nNão peça transferência durante o expediente.",
                 "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nAvalie cada encomenda e compare com o relatório.\n\nConfira FORMATO, CÓDIGO DE BARRAS, LOGOTIPO, FITA, DESTINO e PESO.\n\nAbra o relatório com E ou clique.\nUse A/D para girar a caixa.",
-                "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nSe tudo estiver correto, pressione ENTER para APROVAR.\nSe houver qualquer diferença, pressione Q para REJEITAR.\n\nCada caixa tem 20 segundos.\nO painel da parede mostra hora, pedidos e tempo restante.",
+                "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nSe tudo estiver correto, pressione ENTER para APROVAR.\nSe houver qualquer diferença, pressione Q para REJEITAR.\n\nCada caixa pode chegar a 1 minuto.\nConforme o turno avança, o tempo diminui até 20 segundos.\nO painel da parede mostra hora, pedidos, erros e tempo restante.",
                 "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n____________________________\n\nMantenha atenção nos sons ao redor.\nSe ouvir uma batida atrás de você, pressione S e olhe para o corredor.\n\nQuando estiver virado para trás, pressione F e procure com a lanterna.\n\nSe encontrar os olhos, mantenha a luz neles até a anomalia fugir."
             },
             completionPages = new List<string>
@@ -130,7 +130,7 @@ public class NightStoryManager : MonoBehaviour
             {
                 "TURNO FALHOU\n\nSeu arquivo não foi fechado.\nO Setor Postal 7 guardará o restante do procedimento."
             },
-            briefingText = "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n\nBem-vindo ao Setor Postal 7. Avalie encomendas, compare com o relatório, use E ou clique para abrir o relatório, A/D para girar, ENTER para aprovar e Q para rejeitar. Cada caixa tem 20 segundos. Se ouvir uma batida atrás de você, pressione S. Quando estiver olhando para o corredor, pressione F e procure com a lanterna até a anomalia fugir.",
+            briefingText = "FITA DE BRIEFING - TURNO FINAL\nLOCUTOR - FUNCIONÁRIO #64\n\nBem-vindo ao Setor Postal 7. Avalie encomendas, compare com o relatório, use E ou clique para abrir o relatório, A/D para girar, ENTER para aprovar e Q para rejeitar. Cada caixa pode chegar a 1 minuto, diminuindo até 20 segundos conforme o turno avança. Se ouvir uma batida atrás de você, pressione S. Quando estiver olhando para o corredor, pressione F e procure com a lanterna até a anomalia fugir.",
             completionText = "FIM DO TURNO\n\n00:00 - 06:00\nPedidos processados. Registro fechado. Você sobreviveu ao turno.",
             failureText = "TURNO FALHOU\n\nSeu arquivo não foi fechado. O Setor Postal 7 guardará o restante do procedimento.",
             nightQuota = 10,
