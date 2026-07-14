@@ -75,8 +75,8 @@ public static class CheckpointBootstrap
         AddIfMissing<PackageRotator>(packageRoot);
         AddIfMissing<PackageManager>(packageRoot);
 
-        AddIfMissing<InspectionRoomBuilder>(roomRoot);
         AddIfMissing<ViewSwitcher>(packageRoot);
+        ConfigureSceneCamera();
 
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         AddIfMissing<RuntimeDebugHotkeys>(root);
@@ -92,6 +92,28 @@ public static class CheckpointBootstrap
         }
 
         return false;
+    }
+
+    private static void ConfigureSceneCamera()
+    {
+        Camera playerCamera = Camera.main;
+        if (playerCamera == null)
+        {
+            GameObject cameraObject = new GameObject("Main Camera");
+            cameraObject.tag = "MainCamera";
+            playerCamera = cameraObject.AddComponent<Camera>();
+        }
+
+        if (playerCamera.GetComponent<AudioListener>() == null)
+        {
+            playerCamera.gameObject.AddComponent<AudioListener>();
+        }
+
+        playerCamera.fieldOfView = 56f;
+        playerCamera.backgroundColor = new Color(0.01f, 0.011f, 0.014f);
+
+        BoothPlayerController playerController = Object.FindFirstObjectByType<BoothPlayerController>();
+        playerController?.Configure(playerCamera);
     }
 
     private static void DestroyRuntimeRootIfExists(string objectName)

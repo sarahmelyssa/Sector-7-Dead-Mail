@@ -20,8 +20,8 @@ public class PackageConveyor : MonoBehaviour
     [SerializeField] private float arrivalPauseDuration = 0.16f;
     [SerializeField] private bool alternateEntrySides = true;
     [SerializeField] private bool randomizeInitialRotation = true;
-    [SerializeField] private Vector2 inspectionOffsetXRange = new Vector2(-0.24f, 0.24f);
-    [SerializeField] private Vector2 inspectionOffsetZRange = new Vector2(-0.06f, 0.08f);
+    [SerializeField] private Vector2 inspectionOffsetXRange = Vector2.zero;
+    [SerializeField] private Vector2 inspectionOffsetZRange = Vector2.zero;
     [SerializeField] private float[] startingYawAngles = { -90f, 0f, 0f, 0f, 90f };
 
     public bool isMoving { get; private set; }

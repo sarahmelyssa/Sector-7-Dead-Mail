@@ -13757,7 +13757,7 @@ GameObject:
   - component: {fileID: 410087040}
   - component: {fileID: 410087042}
   m_Layer: 0
-  m_Name: Directional Light_DisabledByInspectionRoomBuilder
+  m_Name: Directional Light_DisabledForHorrorScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
