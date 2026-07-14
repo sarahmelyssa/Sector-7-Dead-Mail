@@ -1196,7 +1196,11 @@ public class UIManager : MonoBehaviour
             briefingBodyText.characterSpacing = useReportScreen ? 0.5f : 0f;
             briefingBodyText.textWrappingMode = TextWrappingModes.Normal;
             briefingBodyText.overflowMode = useReportScreen ? TextOverflowModes.Truncate : TextOverflowModes.Overflow;
-            briefingBodyText.font = useReportScreen ? GetReportFontAsset() : briefingBodyText.font;
+            TMP_FontAsset reportFont = useReportScreen ? GetReportFontAsset() : null;
+            if (reportFont != null)
+            {
+                briefingBodyText.font = reportFont;
+            }
             briefingBodyText.outlineWidth = useReportScreen ? 0.10f : 0.15f;
         }
 
@@ -1864,10 +1868,28 @@ public class UIManager : MonoBehaviour
             return reportFontAsset;
         }
 
-        Font osFont = Font.CreateDynamicFontFromOSFont(new[] { "American Typewriter", "Courier New", "Menlo", "Georgia" }, 64);
-        if (osFont != null)
+        // Usa o TMP Font Asset importado no projeto, evitando depender de fontes do sistema.
+        reportFontAsset = Resources.Load<TMP_FontAsset>("Fonts & Materials/LiberationSans SDF");
+        if (reportFontAsset != null)
         {
-            reportFontAsset = TMP_FontAsset.CreateFontAsset(osFont);
+            return reportFontAsset;
+        }
+
+        if (TMP_Settings.defaultFontAsset != null)
+        {
+            reportFontAsset = TMP_Settings.defaultFontAsset;
+            return reportFontAsset;
+        }
+
+        Font fallbackFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        if (fallbackFont == null)
+        {
+            fallbackFont = Resources.GetBuiltinResource<Font>("Arial.ttf");
+        }
+
+        if (fallbackFont != null)
+        {
+            reportFontAsset = TMP_FontAsset.CreateFontAsset(fallbackFont);
         }
 
         return reportFontAsset;
