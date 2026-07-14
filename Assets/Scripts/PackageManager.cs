@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Gera os dados das encomendas. Pode usar um catalogo inicial controlado ou
+/// criar caixas aleatorias, sempre aumentando a dificuldade ao longo da noite.
+/// </summary>
 public class PackageManager : MonoBehaviour
 {
     public static PackageManager Instance { get; private set; }
@@ -160,6 +164,7 @@ public class PackageManager : MonoBehaviour
             return CreateRandomPackageData();
         }
 
+        // A primeira noite usa um baralho de caixas para controlar o ritmo da dificuldade.
         int currentNight = 1;
         if (initialPackageDeck == null || deckNight != currentNight)
         {
@@ -186,6 +191,7 @@ public class PackageManager : MonoBehaviour
             : reportErrorChance;
         float difficulty = GetDifficultyProgress();
 
+        // Quanto mais perto da quota final, maior a chance de dados suspeitos.
         bool invalidWeight = Random.value < Mathf.Lerp(0.08f, 0.22f, difficulty);
         bool invalidDestination = Random.value < Mathf.Lerp(0.07f, 0.21f, difficulty);
         bool invalidSender = Random.value < Mathf.Lerp(0.06f, 0.20f, difficulty);
@@ -221,6 +227,7 @@ public class PackageManager : MonoBehaviour
             return 0;
         }
 
+        // Evita caixas dificeis cedo demais, deixando as primeiras mais didaticas.
         float progress = GetDifficultyProgress();
         int fallbackIndex = deck.Count - 1;
         for (int i = deck.Count - 1; i >= 0; i--)

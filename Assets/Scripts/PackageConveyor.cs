@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Move as caixas fisicas pela mesa: escolhe o lado de entrada, leva a caixa
+/// ate ao ponto de inspecao e depois envia para a saida oposta.
+/// </summary>
 public class PackageConveyor : MonoBehaviour
 {
     public static event System.Action<GameObject> PackageArrivedAtInspection;
@@ -76,6 +80,7 @@ public class PackageConveyor : MonoBehaviour
             return null;
         }
 
+        // Cada caixa nasce num lado e para no centro da estacao para ser avaliada.
         SelectRouteForNextPackage();
         Vector3 position = entryPoint != null ? entryPoint.position : transform.position;
         Quaternion rotation = activeStartRotation;
@@ -163,6 +168,7 @@ public class PackageConveyor : MonoBehaviour
             yield break;
         }
 
+        // Movimento simples e previsivel: MoveTowards evita saltos bruscos.
         Vector3 targetPosition = GetTargetPosition(targetPoint);
         while (currentPackage != null && Vector3.Distance(currentPackage.transform.position, targetPosition) > 0.025f)
         {
@@ -243,6 +249,7 @@ public class PackageConveyor : MonoBehaviour
     {
         FindOrCreatePoints();
 
+        // Alterna esquerda/direita para a sala parecer uma estacao de processamento.
         bool fromLeft = !alternateEntrySides || nextPackageFromLeft;
         entryPoint = fromLeft ? leftEntryPoint : rightEntryPoint;
         exitPoint = fromLeft ? rightExitPoint : leftExitPoint;
@@ -257,6 +264,7 @@ public class PackageConveyor : MonoBehaviour
             0f,
             Random.Range(Mathf.Min(inspectionOffsetZRange.x, inspectionOffsetZRange.y), Mathf.Max(inspectionOffsetZRange.x, inspectionOffsetZRange.y))
         );
+        // A caixa fica centrada, mas pode chegar com a etiqueta virada para exigir rotacao.
         activeStartRotation = PickInitialPackageRotation(fromLeft);
     }
 

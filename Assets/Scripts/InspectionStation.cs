@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Coordena a bancada de inspecao: recebe caixas, inicia o temporizador,
+/// bloqueia/desbloqueia botoes e envia a decisao para o GameManager.
+/// </summary>
 public class InspectionStation : MonoBehaviour
 {
     public static InspectionStation Instance { get; private set; }
@@ -113,6 +117,7 @@ public class InspectionStation : MonoBehaviour
 
         stationStopped = false;
         actionsLocked = true;
+        // A primeira caixa so e pedida quando a historia/tutorial ja terminou.
         RequestNextPackage();
     }
 
@@ -163,6 +168,7 @@ public class InspectionStation : MonoBehaviour
             return;
         }
 
+        // Ao decidir, fecha o report, para o timer e envia a caixa para a esteira.
         actionsLocked = true;
         reportPanel?.Hide();
         packageConveyor.SendCurrentPackageToExit();
@@ -239,6 +245,7 @@ public class InspectionStation : MonoBehaviour
             return;
         }
 
+        // Quando a caixa para no centro, o report e carregado e o timer comeca.
         currentPackage = packageObject.GetComponent<PackageInteractable>();
         if (currentPackage != null)
         {
@@ -298,6 +305,7 @@ public class InspectionStation : MonoBehaviour
             return;
         }
 
+        // Se o jogador demorar demais, a caixa conta como erro automaticamente.
         CurrentBoxTimeRemaining = Mathf.Max(0f, CurrentBoxTimeRemaining - Time.deltaTime);
         if (CurrentBoxTimeRemaining <= 0f)
         {

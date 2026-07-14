@@ -3,6 +3,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+/// <summary>
+/// Lida com input direto do jogador: clique/E nos botoes, abrir report,
+/// aceitar/rejeitar e rodar a caixa.
+/// </summary>
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
@@ -164,6 +168,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void UpdateRaycastTarget()
     {
+        // Raycast central para descobrir se o jogador esta a apontar para um botao.
         currentInteractable = null;
         currentPhysicalButton = null;
 

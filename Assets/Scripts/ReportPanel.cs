@@ -4,6 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Mostra o relatorio da caixa atual. O jogador abre/fecha com E ou clique
+/// e pode folhear paginas quando o report tiver mais de uma imagem.
+/// </summary>
 public class ReportPanel : MonoBehaviour
 {
     public static ReportPanel Instance { get; private set; }
@@ -87,6 +91,7 @@ public class ReportPanel : MonoBehaviour
             return;
         }
 
+        // Abrir o report tambem inicia o som de fita/cassete do documento.
         UpdateText();
         AudioManager.Instance?.PlayReportOpen();
         AudioManager.Instance?.StartReportCassetteLoop();
@@ -171,6 +176,7 @@ public class ReportPanel : MonoBehaviour
 
         if (currentReportPageIndex < currentReportPages.Count - 1)
         {
+            // O mesmo botao avanca paginas e fecha ao chegar ao final.
             currentReportPageIndex++;
             ApplyCurrentReportPage();
             AudioManager.Instance?.PlayReportOpen();
@@ -187,6 +193,7 @@ public class ReportPanel : MonoBehaviour
             return;
         }
 
+        // A imagem do report e preservada proporcionalmente para nao deformar.
         Sprite sprite = currentReportPages.Count > 0
             ? currentReportPages[Mathf.Clamp(currentReportPageIndex, 0, currentReportPages.Count - 1)]
             : null;

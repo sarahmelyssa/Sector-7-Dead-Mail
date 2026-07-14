@@ -9,6 +9,10 @@ using UnityEngine.Video;
 using UnityEditor;
 #endif
 
+/// <summary>
+/// Controla o fim do jogo: fade da gameplay, video final, tela de vitoria
+/// e tela de Game Over com hotspots invisiveis sobre as imagens prontas.
+/// </summary>
 public class EndGameFlowManager : MonoBehaviour
 {
     public static EndGameFlowManager Instance { get; private set; }
@@ -119,6 +123,7 @@ public class EndGameFlowManager : MonoBehaviour
 
     private IEnumerator PlayWinSequenceRoutine(bool forceVideo)
     {
+        // Primeiro escurece a gameplay; depois decide se toca video ou mostra vitoria.
         yield return FadeTo(1f, gameplayFadeOutDuration);
 
         if ((forceVideo || playVideoBeforeWinScreen) && finalVideoClip != null && videoPlayer != null)
@@ -143,6 +148,7 @@ public class EndGameFlowManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(delay);
         }
 
+        // Derrota usa fade para evitar corte seco entre jogo e imagem final.
         yield return FadeTo(1f, gameplayFadeOutDuration);
         HideContent();
         BackgroundMusicManager.Instance?.PlayBriefingMusic(false);
@@ -169,6 +175,7 @@ public class EndGameFlowManager : MonoBehaviour
 
     private IEnumerator PlayFinalVideoThenShowWinRoutine()
     {
+        // O video fica isolado em canvas proprio e termina em preto antes da tela Win.
         HideContent();
         videoSequenceControlledByCoroutine = true;
         videoPlaybackFailed = false;

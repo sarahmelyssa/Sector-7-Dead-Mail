@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Ponto de entrada da cena jogavel. A sala ja esta montada na Unity, e este
+/// script apenas garante que os managers e referencias essenciais existem.
+/// </summary>
 public static class CheckpointBootstrap
 {
     public const string RuntimeRootName = "Sector7_RuntimeRoot";
@@ -56,6 +60,7 @@ public static class CheckpointBootstrap
         DestroyRuntimeRootIfExists("Runtime_Anomalies");
         DestroyRuntimeRootIfExists("Runtime_MobSystem");
 
+        // Managers globais da partida: regras, audio, historia, UI e anomalias.
         AddIfMissing<AudioManager>(root);
         AddIfMissing<GameManager>(root);
         AddIfMissing<NightStoryManager>(root);
@@ -85,6 +90,7 @@ public static class CheckpointBootstrap
 
     private static bool AddIfMissing<T>(GameObject root) where T : Component
     {
+        // Evita duplicar managers quando a cena ja tem algum configurado.
         if (Object.FindFirstObjectByType<T>() == null)
         {
             root.AddComponent<T>();
@@ -109,6 +115,7 @@ public static class CheckpointBootstrap
             playerCamera.gameObject.AddComponent<AudioListener>();
         }
 
+        // A camera fica sempre pronta para gameplay e para o sistema de som.
         playerCamera.fieldOfView = 56f;
         playerCamera.backgroundColor = new Color(0.01f, 0.011f, 0.014f);
 

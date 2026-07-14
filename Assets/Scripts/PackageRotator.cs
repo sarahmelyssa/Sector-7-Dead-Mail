@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Permite rodar a caixa em passos de 90 graus para o jogador conseguir ler
+/// etiquetas que chegam viradas de lado.
+/// </summary>
 public class PackageRotator : MonoBehaviour
 {
     [SerializeField] private PackageConveyor packageConveyor = null;
@@ -77,6 +81,7 @@ public class PackageRotator : MonoBehaviour
 
     private IEnumerator RotatePackage(float angle)
     {
+        // Rotacao interpolada para nao dar salto visual.
         isRotating = true;
         Quaternion startRotation = currentPackage.rotation;
         Quaternion targetRotation = startRotation * Quaternion.Euler(0f, angle, 0f);

@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Recebe a escolha do jogador e transforma isso em resultado de gameplay,
+/// incluindo som de botao, som de acerto/erro e evento para o painel.
+/// </summary>
 public class DecisionManager : MonoBehaviour
 {
     public static event System.Action<bool> DecisionResolved;
@@ -35,6 +39,7 @@ public class DecisionManager : MonoBehaviour
             AudioManager.Instance?.PlayRejectButton();
         }
 
+        // A regra de certo/errado fica no GameManager; este script so coordena a decisao.
         bool correct = gameManager.RegisterPackageDecision(packageData, accepted);
         if (correct)
         {
@@ -61,6 +66,7 @@ public class DecisionManager : MonoBehaviour
             return false;
         }
 
+        // Timeout e sempre tratado como falha para o jogador perder uma vida.
         bool forcedWrongDecision = packageData.ShouldReject;
         bool correct = gameManager.RegisterPackageDecision(packageData, forcedWrongDecision);
         AudioManager.Instance?.PlayWrongResponse();

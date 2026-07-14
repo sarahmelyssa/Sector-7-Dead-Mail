@@ -11,6 +11,10 @@ public enum GameState
     GameOver
 }
 
+/// <summary>
+/// Controla as regras principais da partida: quota de caixas corretas, erros,
+/// vitoria, derrota e paragem dos sistemas quando o jogo termina.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public int quotaNecessaria = 3;
@@ -57,6 +61,7 @@ public class GameManager : MonoBehaviour
             return false;
         }
 
+        // Se a caixa deve ser rejeitada, aceitar e erro; se esta correta, aceitar e acerto.
         bool correctDecision = accepted != packageData.ShouldReject;
 
         if (correctDecision)
@@ -91,6 +96,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        // A vitoria bloqueia a gameplay antes de iniciar o video/tela final.
         CurrentState = GameState.Victory;
         StopGameplaySystems();
         if (victorySequenceRoutine != null)
@@ -184,6 +190,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        // A derrota tambem congela a partida, liberta o cursor e mostra a tela final.
         CurrentState = GameState.GameOver;
         StopGameplaySystems();
         AudioManager.Instance?.PlayGameOver();
@@ -278,6 +285,7 @@ public class GameManager : MonoBehaviour
 
     private void StopGameplaySystems()
     {
+        // Centraliza a paragem para caixas, UI e relogio nao continuarem apos o fim.
         InspectionStation.Instance?.StopStation();
         PackageManager.Instance?.StopPackageFlow();
         InspectionUI.Instance?.CloseInspection();

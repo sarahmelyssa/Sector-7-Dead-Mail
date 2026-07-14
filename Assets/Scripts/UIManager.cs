@@ -8,6 +8,10 @@ using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controla as telas de interface que nao fazem parte fisica da sala:
+/// briefing/fita, pause, transicoes, telas simples de vitoria/derrota e atalhos.
+/// </summary>
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
@@ -124,6 +128,7 @@ public class UIManager : MonoBehaviour
 
     private void ShowBriefingInternal(string title, string body, Action onContinue, string backgroundResourcePath)
     {
+        // O briefing pode aparecer como texto normal ou como relatorio/fita.
         bool shouldSkipIntroFade = showTransitionBlockerOnNextScene;
         HideAllStoryPanels();
         IsBlockingScreenOpen = true;
@@ -348,6 +353,7 @@ public class UIManager : MonoBehaviour
             return;
         }
 
+        // Pause usa imagem pronta com hotspots invisiveis em cima dos botoes desenhados.
         SetPaused(!isPaused);
     }
 
@@ -409,6 +415,7 @@ public class UIManager : MonoBehaviour
 
     public static void BlockNextStorySceneUntilBriefing()
     {
+        // Mantem a tela preta entre cenas para nao mostrar a sala antes da historia.
         showTransitionBlockerOnNextScene = true;
         Instance?.ShowTransitionBlocker();
     }

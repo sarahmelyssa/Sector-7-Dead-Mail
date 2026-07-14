@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controla o fluxo narrativo da noite unica: menu, fita de briefing,
+/// inicio da gameplay e configuracoes do turno.
+/// </summary>
 public class NightStoryManager : MonoBehaviour
 {
     public static NightStoryManager Instance { get; private set; }
@@ -15,7 +19,7 @@ public class NightStoryManager : MonoBehaviour
         public string briefingBackgroundResourcePath;
         public string completionBackgroundResourcePath;
 
-        // Edit story reports here. Each item in these lists becomes one page in the report UI.
+        // Cada item destas listas vira uma pagina na tela de fita/relatorio.
         [TextArea(4, 10)] public List<string> briefingPages = new List<string>();
         [TextArea(3, 8)] public List<string> completionPages = new List<string>();
         [TextArea(3, 8)] public List<string> failurePages = new List<string>();
@@ -111,6 +115,7 @@ public class NightStoryManager : MonoBehaviour
 
     private void NormalizeSingleShiftData()
     {
+        // O projeto final foi simplificado para uma noite completa e polida.
         var finalShift = new NightStoryData
         {
             nightNumber = 1,
@@ -148,6 +153,7 @@ public class NightStoryManager : MonoBehaviour
 
         if (skipBriefingOnNextGameplayLoad)
         {
+            // Usado pelo Restart: recomeca direto na gameplay depois das fitas.
             skipBriefingOnNextGameplayLoad = false;
             hasStartedFromMainMenuThisSession = true;
             waitingForMainMenu = false;

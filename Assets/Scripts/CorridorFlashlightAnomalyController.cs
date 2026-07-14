@@ -8,12 +8,18 @@ using UnityEngine.UI;
 using UnityEditor;
 #endif
 
+/// <summary>
+/// Controla o perigo do corredor: lanterna movel, pistas sonoras, olhos,
+/// criatura roxa e jumpscare quando o jogador ignora a anomalia.
+/// </summary>
 public class CorridorFlashlightAnomalyController : MonoBehaviour
 {
     private enum CorridorCueType
     {
         None,
+        // Creature usa batida/hit e precisa ser encontrada com a lanterna.
         Creature,
+        // Eyes usa vozes e olhos brilhantes que somem quando iluminados.
         Eyes
     }
 
@@ -134,6 +140,7 @@ public class CorridorFlashlightAnomalyController : MonoBehaviour
 
     private void Awake()
     {
+        // Resolve/cria dependencias para a cena poder ser montada manualmente.
         ResolveReferences();
         LoadDefaultProjectClipsIfNeeded();
         generatedFlashlightClickClip = CreateFlashlightClickClip();
@@ -194,6 +201,7 @@ public class CorridorFlashlightAnomalyController : MonoBehaviour
 
         UpdateActiveAnomalyVisuals();
 
+        // A anomalia so e resolvida se a lanterna estiver realmente apontada para ela.
         if (flashlightOn && anomalyReady && activeCueType == CorridorCueType.Creature && IsAnomalyInsideFlashlightCone())
         {
             ResolveCreatureAnomaly();

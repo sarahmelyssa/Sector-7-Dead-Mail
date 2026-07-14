@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Centraliza os efeitos sonoros da gameplay: caixas, botoes, reports,
+/// ambiente, corredor, fita cassete e feedback de acerto/erro.
+/// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
@@ -130,6 +134,7 @@ public class AudioManager : MonoBehaviour
         Configure2DSource(audioSource);
         LoadDefaultProjectClipsIfNeeded();
 
+        // Fallbacks gerados em codigo: se algum asset faltar, o jogo ainda tem som.
         generatedKnockClips = new[]
         {
             CreateKnockClip("Generated Knock Low", 72f),
@@ -190,6 +195,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayPackageGenerated(Vector3 position)
     {
+        // Som 3D para a caixa parecer vir da mesa/esteira.
         PlaySpatial(packageGeneratedClip != null ? packageGeneratedClip : generatedPackageMoveClip, position, 0.34f, 0.65f, 5.5f);
     }
 
@@ -756,6 +762,7 @@ public class AudioManager : MonoBehaviour
             ambienceSource = CreateChildSource("Room Ambience Source", false);
         }
 
+        // Ambiente 2D discreto para manter tensao constante durante a partida.
         ambienceSource.clip = roomAmbienceClip != null ? roomAmbienceClip : generatedRoomAmbienceClip;
         ambienceSource.loop = true;
         ambienceSource.playOnAwake = false;
@@ -896,6 +903,7 @@ public class AudioManager : MonoBehaviour
 
     private void LoadDefaultProjectClipsIfNeeded()
     {
+        // Primeiro tenta usar os audios importados no projeto; se nao existirem, usa fallbacks.
         roomAmbienceClip = roomAmbienceClip != null ? roomAmbienceClip : LoadNamedProjectAudioClip("Ambience", "ambience_room_loop");
         corridorAmbienceClip = corridorAmbienceClip != null ? corridorAmbienceClip : LoadNamedProjectAudioClip("Ambience", "ambience_corridor_loop");
         packageGeneratedClip = packageGeneratedClip != null ? packageGeneratedClip : LoadNamedProjectAudioClip("SFX", "sfx_box_move", "sfx_box_slide");

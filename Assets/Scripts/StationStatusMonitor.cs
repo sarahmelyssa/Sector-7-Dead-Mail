@@ -1,6 +1,10 @@
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Atualiza o painel fisico da parede: hora, pedidos, timer da caixa,
+/// progresso e coracoes de vida.
+/// </summary>
 public class StationStatusMonitor : MonoBehaviour
 {
     [SerializeField] private TMP_Text statusText = null;
@@ -138,6 +142,7 @@ public class StationStatusMonitor : MonoBehaviour
             ? 6
             : Mathf.Clamp(Mathf.FloorToInt(progress * 6f), 0, 5);
 
+        // A hora e simbolica: a noite progride de 00 AM ate 06 AM.
         wallTimerText.text = "HORA " + currentHour.ToString("00") + " AM";
         wallTimerText.color = currentHour >= 5
             ? new Color(0.950f, 0.160f, 0.250f)
@@ -165,6 +170,7 @@ public class StationStatusMonitor : MonoBehaviour
 
         if (inspectionStation != null && inspectionStation.IsBoxTimerRunning)
         {
+            // Mostra o tempo restante da caixa atual no painel da sala.
             int seconds = Mathf.CeilToInt(Mathf.Max(0f, inspectionStation.CurrentBoxTimeRemaining));
             wallStateText.text = "CAIXA " + seconds.ToString("00") + "s";
             wallStateText.color = seconds <= 3
@@ -200,6 +206,7 @@ public class StationStatusMonitor : MonoBehaviour
 
     private void UpdateLivesDisplay()
     {
+        // Os coracoes mostram as 3 chances antes do Game Over.
         int wrong = gameManager != null ? gameManager.WrongDecisionCount : 0;
         int maxLives = gameManager != null ? gameManager.MaxWrongDecisions : 3;
         int livesToShow = Mathf.Clamp(maxLives, 1, 3);

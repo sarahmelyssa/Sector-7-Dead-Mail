@@ -2,6 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Mantem musica de fundo entre cenas e faz crossfade entre menu, briefing
+/// e gameplay para evitar cortes bruscos.
+/// </summary>
 [DisallowMultipleComponent]
 public class BackgroundMusicManager : MonoBehaviour
 {
@@ -41,6 +45,7 @@ public class BackgroundMusicManager : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Bootstrap()
     {
+        // Criado antes da cena carregar para a musica nao reiniciar entre menus/telas.
         if (Instance != null || Object.FindFirstObjectByType<BackgroundMusicManager>() != null)
         {
             return;
@@ -161,6 +166,7 @@ public class BackgroundMusicManager : MonoBehaviour
 
     private void ApplySceneMusic(Scene scene, bool immediate)
     {
+        // Briefing usa a musica do menu; gameplay usa o loop industrial da fase.
         bool sceneIsMenu = scene.name.ToLowerInvariant().Contains("menu");
         bool sceneIsBriefing = keepBriefingMusicForNextScene || (!sceneIsMenu
             && NightStoryManager.Instance != null
@@ -199,6 +205,7 @@ public class BackgroundMusicManager : MonoBehaviour
             fadeRoutine = null;
         }
 
+        // Duas fontes permitem uma musica baixar enquanto a outra entra.
         AudioSource nextSource = idleSource != null && idleSource != activeSource ? idleSource : secondarySource;
         AudioSource previousSource = activeSource;
 

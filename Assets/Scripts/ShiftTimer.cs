@@ -2,6 +2,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Conta o tempo total do turno. O painel fisico transforma este tempo em
+/// horas simbolicas de 00 AM ate 06 AM.
+/// </summary>
 public class ShiftTimer : MonoBehaviour
 {
     [SerializeField] private float totalShiftDuration = 180f;
@@ -56,6 +60,7 @@ public class ShiftTimer : MonoBehaviour
             return;
         }
 
+        // O timer so corre durante a gameplay ativa.
         CurrentTime = Mathf.Max(0f, CurrentTime - Time.deltaTime);
         UpdateTimerText();
         UpdateStatusText();

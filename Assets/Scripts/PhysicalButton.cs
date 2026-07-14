@@ -10,6 +10,10 @@ public enum ButtonType
     ToggleReport
 }
 
+/// <summary>
+/// Representa os botoes fisicos da bancada. Cada botao chama uma acao da
+/// InspectionStation e toca/animacao de clique.
+/// </summary>
 [RequireComponent(typeof(Collider))]
 public class PhysicalButton : MonoBehaviour
 {
@@ -81,6 +85,7 @@ public class PhysicalButton : MonoBehaviour
 
         AudioManager.Instance?.PlayButtonClick();
 
+        // Um unico componente serve para aceitar, rejeitar, rodar e abrir report.
         switch (buttonType)
         {
             case ButtonType.Accept:

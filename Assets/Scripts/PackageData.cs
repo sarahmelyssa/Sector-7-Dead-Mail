@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Guarda todos os dados de uma encomenda: o que aparece na caixa, o que aparece
+/// no relatorio e a regra que decide se deve ser aceite ou rejeitada.
+/// </summary>
 [Serializable]
 public class PackageData
 {
@@ -45,6 +49,7 @@ public class PackageData
     private List<Sprite> loadedReportPages;
     private Texture2D loadedBoxLabelTexture;
 
+    // Uma caixa deve ser rejeitada quando algum dado visual nao bate com o report.
     public bool ShouldReject => CalculateShouldReject();
     public bool isDangerous => ShouldReject;
     public bool shouldReject => ShouldReject;

@@ -2,6 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Controla a virada suave entre a vista frontal da mesa e a vista do corredor.
+/// Tambem envia eventos para a lanterna/anomalia saberem quando o jogador virou.
+/// </summary>
 public class ViewSwitcher : MonoBehaviour
 {
     public static ViewSwitcher Instance { get; private set; }
@@ -89,6 +93,7 @@ public class ViewSwitcher : MonoBehaviour
             return;
         }
 
+        // Cada virada recomeca sem offset para a camera nao ficar desalinhada.
         yawOffset = 0f;
         pitchOffset = 0f;
         AudioManager.Instance?.PlayLookTurn(targetLookingBack);
@@ -157,6 +162,7 @@ public class ViewSwitcher : MonoBehaviour
             yield break;
         }
 
+        // A flag bloqueia spam de input enquanto a rotacao cinematografica acontece.
         isTurning = true;
         Vector3 startPosition = playerCamera.transform.position;
         Quaternion startRotation = playerCamera.transform.rotation;
@@ -190,6 +196,7 @@ public class ViewSwitcher : MonoBehaviour
             return;
         }
 
+        // Pequeno olhar livre limitado, sem transformar em camera livre.
         Vector2 delta = mouse.delta.ReadValue();
         yawOffset = Mathf.Clamp(yawOffset + delta.x * lookSensitivity, -maxYawOffset, maxYawOffset);
         pitchOffset = Mathf.Clamp(pitchOffset - delta.y * lookSensitivity, minPitchOffset, maxPitchOffset);
